@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Decryptor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding in width */
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            background-color: #eee;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap; /* Preserve whitespace and wrap long lines */
+            word-wrap: break-word; /* Break long words */
+            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid #ddd;
+            margin-top: 15px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Decryptor</h1>
+
+        <label for="encryptedCode">Masukkan Kode JavaScript Terenkripsi:</label>
+        <textarea id="encryptedCode" rows="15" placeholder="function _0xabc123() { /* ... */ }"></textarea>
+
+        <button onclick="decryptCode()">Decrypt</button>
+
+        <h2>Hasil Dekripsi:</h2>
+        <pre id="decryptedOutput"></pre>
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <script>
+        async function decryptCode() {
+            const encryptedCode = document.getElementById('encryptedCode').value;
+            const decryptedOutput = document.getElementById('decryptedOutput');
+            const errorMessage = document.getElementById('errorMessage');
+
+            decryptedOutput.textContent = 'Mendekripsi...';
+            errorMessage.textContent = '';
+
+            try {
+                const response = await fetch('/decrypt', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ code: encryptedCode })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    decryptedOutput.textContent = data.decryptedCode;
+                } else {
+                    decryptedOutput.textContent = 'Gagal mendekripsi.';
+                    errorMessage.textContent = data.error || 'Terjadi kesalahan server.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                decryptedOutput.textContent = 'Gagal mendekripsi.';
+                errorMessage.textContent = 'Tidak dapat terhubung ke server.';
+            }
+        }
+    </script>
+</body>
+</html>
