@@ -1,115 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Decryptor</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #0056b3;
-        }
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box; /* Include padding in width */
-            font-family: 'Courier New', Courier, monospace;
-        }
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        pre {
-            background-color: #eee;
-            padding: 15px;
-            border-radius: 4px;
-            overflow-x: auto;
-            white-space: pre-wrap; /* Preserve whitespace and wrap long lines */
-            word-wrap: break-word; /* Break long words */
-            font-family: 'Courier New', Courier, monospace;
-            border: 1px solid #ddd;
-            margin-top: 15px;
-        }
-        .error {
-            color: red;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 PAYMENT P3NTAL 🔥</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+      background-size: 20px 20px;
+      overflow-x: hidden;
+    }
+    .kontainer-sketch {
+      border: 3px solid #ff4757;
+      border-radius: 15px;
+      background-color: #1e1e1e;
+      box-shadow: 0 0 20px rgba(255, 71, 87, 0.3);
+      margin-top: 30px;
+      animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .judul-utama {
+      font-family: 'Permanent Marker', cursive;
+      color: #ff4757;
+      text-shadow: 0 0 10px rgba(255, 71, 87, 0.7);
+      text-align: center;
+      padding: 20px 0;
+    }
+    .judul-utama h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .metode-bayar {
+      background-color: #2a2a2a;
+      border-left: 4px solid #ff4757;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 0 8px 8px 0;
+    }
+    .judul-bayar {
+      color: #ff6348;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .judul-bayar i {
+      margin-right: 10px;
+    }
+    .detel-byr {
+      background-color: #333;
+      padding: 8px 12px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      font-family: monospace;
+      border: 1px dashed #555;
+    }
+    .tombol-sketch {
+      background-color: transparent;
+      border: 2px solid #ff4757;
+      color: #ff4757;
+      font-weight: bold;
+      padding: 8px 20px;
+      border-radius: 30px;
+      transition: all 0.3s;
+      margin: 5px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .tombol-sketch:hover {
+      background-color: #ff4757;
+      color: #121212;
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+    }
+    .tombol-sketch::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border: 2px dashed #ff4757;
+      border-radius: 30px;
+      animation: puterin 10s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tombol-sketch:hover::before {
+      opacity: 0.5;
+    }
+    .footerz {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px dashed #444;
+    }
+    @keyframes puterin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .list-itemz {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .list-itemz li::before {
+      content: "➥ ";
+      color: #ff4757;
+    }
+    .highlightz {
+      background: linear-gradient(90deg, transparent, rgba(255, 71, 87, 0.2), transparent);
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    #gambar-qr {
+      max-width: 300px;
+      margin: 20px auto;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+      border-radius: 15px;
+      border: 3px solid #ff4757;
+      box-shadow: 0 0 15px rgba(255, 71, 87, 0.4);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>JavaScript Decryptor</h1>
+  <div class="container py-4">
+    <div class="kontainer-sketch p-3 p-md-4">
+      <div class="judul-utama">
+        <h1>🔥 PAYMENT P3NTAL 🔥</h1>
+        <p class="mb-0">✪ MAU BAYAR? LEBIHIN YA HEHE 🗿 ✪</p>
+      </div>
 
-        <label for="encryptedCode">Masukkan Kode JavaScript Terenkripsi:</label>
-        <textarea id="encryptedCode" rows="15" placeholder="function _0xabc123() { /* ... */ }"></textarea>
+      <!-- Metode Pembayaran -->
+      <div class="metode-bayar">
+        <div class="judul-bayar"><i class="fas fa-wallet"></i> DANA</div>
+        <div class="detel-byr">085822504361</div>
+        <div class="detel-byr">A/N:PEN**** ST***</div>
+      </div>
 
-        <button onclick="decryptCode()">Decrypt</button>
+      <div class="metode-bayar">
+        <div class="judul-bayar"><i class="fas fa-mobile-alt"></i> OVO</div>
+        <div class="detel-byr">TIDAK TERSEDIA</div>
+        <div class="detel-byr">A/N:</div>
+      </div>
 
-        <h2>Hasil Dekripsi:</h2>
-        <pre id="decryptedOutput"></pre>
-        <p id="errorMessage" class="error"></p>
+      <div class="metode-bayar">
+        <div class="judul-bayar"><i class="fab fa-google"></i> GOPAY</div>
+        <div class="detel-byr">085822504361</div>
+        <div class="detel-byr">A/N:PE**** ST**RE</div>
+      </div>
+
+      <div class="text-center my-4">
+        <p class="highlightz">SALIN AJA NO DI ATAS DAN BUAT YG BELUM PREM PAKE QR AJA OKE 👌</p>
+      </div>
+
+      <div class="metode-bayar">
+        <ul class="list-itemz">
+          <li>SCAN CODE QR KLIK DI BAWAH INI 🥶</li>
+          <li>QR ALL PAY</li>
+          <li>JOIN GRUP BISA KLIK BUTTON DI BAWAH 😋</li>
+        </ul>
+      </div>
+
+      <div class="metode-bayar">
+        <p>JIKA SUDAH BAYAR MOHON DI SCREENSHOT BUKTI PEMBAYARAN DAN KIRIM KE SAYA</p>
+      </div>
+
+      <div class="text-center my-4">
+        <button class="tombol-sketch" id="tombol-qr">
+          <i class="fas fa-qrcode"></i> QR PAYMENT
+        </button>
+        <button class="tombol-sketch" id="tombol-grup">
+          <i class="fas fa-users"></i> JOIN GRUP
+        </button>
+        <button class="tombol-sketch" id="tombol-bukti">
+          <i class="fas fa-paper-plane"></i> KIRIM BUKTI
+        </button>
+
+        <!-- Gambar QRIS -->
+        <img src="https://files.catbox.moe/h7x4pq.jpg?text=QRIS+IsNotSepuh" id="gambar-qr" alt="QRIS ANJAY">
+      </div>
+
+      <div class="footerz">
+        <p class="mb-0">© 2025 IsNotSepuh | Bukan Bank Yang Bisa Ditalangin</p>
+      </div>
     </div>
+  </div>
 
-    <script>
-        async function decryptCode() {
-            const encryptedCode = document.getElementById('encryptedCode').value;
-            const decryptedOutput = document.getElementById('decryptedOutput');
-            const errorMessage = document.getElementById('errorMessage');
+  <script>
+    const tombolQR = document.getElementById('tombol-qr');
+    const tombolGrup = document.getElementById('tombol-grup');
+    const tombolBukti = document.getElementById('tombol-bukti');
+    const gambarQR = document.getElementById('gambar-qr');
 
-            decryptedOutput.textContent = 'Mendekripsi...';
-            errorMessage.textContent = '';
+    tombolQR.addEventListener('click', () => {
+      gambarQR.style.display = gambarQR.style.display === 'none' ? 'block' : 'none';
+    });
 
-            try {
-                const response = await fetch('/decrypt', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ code: encryptedCode })
-                });
+    tombolGrup.addEventListener('click', () => {
+      window.open('https://whatsapp.com/channel/0029Vb5mcO83GJP45P0pVQ30', '_blank');
+    });
 
-                const data = await response.json();
-
-                if (response.ok) {
-                    decryptedOutput.textContent = data.decryptedCode;
-                } else {
-                    decryptedOutput.textContent = 'Gagal mendekripsi.';
-                    errorMessage.textContent = data.error || 'Terjadi kesalahan server.';
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                decryptedOutput.textContent = 'Gagal mendekripsi.';
-                errorMessage.textContent = 'Tidak dapat terhubung ke server.';
-            }
-        }
-    </script>
+    tombolBukti.addEventListener('click', () => {
+      const nomorWA = '6285822504361'; // Ganti dengan nomor WA kamu
+      const pesan = encodeURIComponent('Halo kak, saya sudah transfer! Ini buktinya:');
+      window.open(`https://wa.me/${nomorWA}?text=${pesan}`, '_blank');
+    });
+  </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9487dbb37c854da7","version":"2025.5.0","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"7f68228aadce4d1381c43cb4d6ea2712","b":1}' crossorigin="anonymous"></script>
 </body>
 </html>
